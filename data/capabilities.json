@@ -1,1 +1,130 @@
-{"nodes":[{"name":"الهندسة كنمط تفكير","desc":"منهج تحليلي وبنائي."},{"name":"تطوير الأعمال","desc":"ربط القيمة بالفرص."},{"name":"إدارة العمليات","desc":"تصميم وتحسين التدفقات."},{"name":"التدريب ونقل المعرفة","desc":"تحويل الخبرة إلى أنظمة تعلم."},{"name":"إدارة الحشود والفعاليات","desc":"تنسيق الأنظمة البشرية الحية."},{"name":"القيادة الارتجالية وتحمل المسؤولية","desc":"اتخاذ القرار تحت الضغط."},{"name":"بناء الأنظمة","desc":"تحويل الأفكار إلى هياكل قابلة للتوسع."}]}
+{
+  "nodes":[
+
+    {
+      "data":{
+        "id":"ahmed",
+        "label":"Ahmed",
+        "description":"منظومة قدرات مترابطة وليست مساراً زمنياً.",
+        "type":"core"
+      }
+    },
+
+    {
+      "data":{
+        "id":"engineering",
+        "label":"الهندسة",
+        "description":"الهندسة كأسلوب تفكير وبناء وتحليل."
+      }
+    },
+
+    {
+      "data":{
+        "id":"systems",
+        "label":"بناء الأنظمة",
+        "description":"تحويل الأفكار إلى هياكل قابلة للتوسع."
+      }
+    },
+
+    {
+      "data":{
+        "id":"operations",
+        "label":"إدارة العمليات",
+        "description":"تصميم وتحسين تدفقات العمل."
+      }
+    },
+
+    {
+      "data":{
+        "id":"business",
+        "label":"تطوير الأعمال",
+        "description":"ربط القيمة بالفرص والنمو."
+      }
+    },
+
+    {
+      "data":{
+        "id":"training",
+        "label":"التدريب",
+        "description":"تحويل الخبرة إلى معرفة قابلة للنقل."
+      }
+    },
+
+    {
+      "data":{
+        "id":"crowd",
+        "label":"إدارة الحشود",
+        "description":"إدارة الأنظمة البشرية الحية."
+      }
+    },
+
+    {
+      "data":{
+        "id":"leadership",
+        "label":"القيادة الارتجالية",
+        "description":"اتخاذ القرار وتحمل المسؤولية تحت الضغط."
+      }
+    }
+
+  ],
+
+  "links":[
+
+    {
+      "data":{
+        "source":"ahmed",
+        "target":"engineering"
+      }
+    },
+
+    {
+      "data":{
+        "source":"engineering",
+        "target":"systems"
+      }
+    },
+
+    {
+      "data":{
+        "source":"systems",
+        "target":"operations"
+      }
+    },
+
+    {
+      "data":{
+        "source":"operations",
+        "target":"business"
+      }
+    },
+
+    {
+      "data":{
+        "source":"training",
+        "target":"operations"
+      }
+    },
+
+    {
+      "data":{
+        "source":"crowd",
+        "target":"leadership"
+      }
+    },
+
+    {
+      "data":{
+        "source":"leadership",
+        "target":"business"
+      }
+    },
+
+    {
+      "data":{
+        "source":"leadership",
+        "target":"training"
+      }
+    }
+
+  ]
+}
