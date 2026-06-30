@@ -1,0 +1,1 @@
+fetch('data/capabilities.json').then(r=>r.json()).then(d=>{const root=document.getElementById('map');d.nodes.forEach(n=>{const el=document.createElement('div');el.className='card';el.innerHTML=`<h3>${n.name}</h3><p>${n.desc}</p>`;root.appendChild(el);});});
