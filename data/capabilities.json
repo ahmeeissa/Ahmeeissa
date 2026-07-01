@@ -1,27 +1,26 @@
 {
-  "nodes":[
+  "nodes": [
     {
-      "data":{
-        "id":"ahmed",
-        "label":"Ahmed",
-        "description":"منظومة قدرات مترابطة.",
-        "type":"core"
+      "data": {
+        "id": "a",
+        "label": "A",
+        "description": "test",
+        "type": "core"
       }
     },
     {
-      "data":{
-        "id":"engineering",
-        "label":"الهندسة",
-        "description":"الهندسة كأسلوب تفكير."
+      "data": {
+        "id": "b",
+        "label": "B",
+        "description": "test"
       }
     }
   ],
-
-  "links":[
+  "links": [
     {
-      "data":{
-        "source":"ahmed",
-        "target":"engineering"
+      "data": {
+        "source": "a",
+        "target": "b"
       }
     }
   ]
