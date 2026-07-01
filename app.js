@@ -98,11 +98,8 @@ opacity:.08
 
 layout:{
     name:"cose",
-    animate:"end",
-    animationDuration:2000,
-    idealEdgeLength:180,
-    nodeRepulsion:600000,
-    padding:120
+    animate:true,
+    padding:100
 }
 
 });
