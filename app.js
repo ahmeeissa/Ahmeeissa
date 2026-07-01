@@ -125,3 +125,8 @@ document.getElementById("description").innerText=node.data("description");
 });
 
 });
+layout:{
+    name:"cose",
+    animate:true,
+    padding:100
+}
