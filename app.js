@@ -97,13 +97,12 @@ opacity:.08
 ],
 
 layout:{
-
-name:"cose",
-
-animate:true,
-
-padding:100
-
+    name:"cose",
+    animate:"end",
+    animationDuration:2000,
+    idealEdgeLength:180,
+    nodeRepulsion:600000,
+    padding:120
 }
 
 });
@@ -125,16 +124,4 @@ document.getElementById("description").innerText=node.data("description");
 });
 
 });
-layout:{
-    name:"cose",
-    animate:true,
-    padding:100
-}
-layout:{
-    name:"cose",
-    animate:"end",
-    animationDuration:2000,
-    idealEdgeLength:180,
-    nodeRepulsion:600000,
-    padding:120
-}
+
