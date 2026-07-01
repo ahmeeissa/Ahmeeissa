@@ -26,24 +26,27 @@ style:{
 
 label:"data(label)",
 
-width:80,
+width:90,
 
-height:80,
+height:90,
 
 "text-valign":"center",
 
 "text-halign":"center",
 
-"font-size":"12px",
+"font-size":"13px",
 
 color:"#fff",
 
-"background-color":"#238636",
+"background-color":"#1f6feb",
 
 "text-wrap":"wrap",
 
-"text-max-width":"100px"
+"text-max-width":"110px",
 
+"border-width":2,
+
+"border-color":"rgba(255,255,255,.15)"
 }
 
 },
@@ -54,14 +57,15 @@ selector:'node[type="core"]',
 
 style:{
 
-width:120,
+width:150,
 
-height:120,
+height:150,
 
 "background-color":"#58a6ff",
 
-"font-size":"16px"
+"font-size":"18px",
 
+"font-weight":"300"
 }
 
 },
@@ -72,11 +76,13 @@ selector:"edge",
 
 style:{
 
-width:2,
+width:1.5,
 
-"line-color":"#444",
+"line-color":"rgba(255,255,255,.25)",
 
-opacity:.5
+opacity:.7,
+
+"curve-style":"bezier"
 
 }
 
@@ -95,30 +101,3 @@ opacity:.08
 }
 
 ],
-
-layout:{
-    name:"cose",
-    animate:true,
-    padding:100
-}
-
-});
-
-cy.on("tap","node",evt=>{
-
-const node=evt.target;
-
-const connected=node.closedNeighborhood();
-
-cy.elements().addClass("fade");
-
-connected.removeClass("fade");
-
-document.getElementById("title").innerText=node.data("label");
-
-document.getElementById("description").innerText=node.data("description");
-
-});
-
-});
-
