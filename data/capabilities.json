@@ -1,10 +1,11 @@
 {
   "nodes": [
+
     {
       "data": {
         "id": "core",
         "label": "Ahmeeissa",
-        "description": "خريطة العلاقات المهنية والقدرات"
+        "description": "منظومة القدرات والعلاقات المهنية"
       },
       "classes": "core"
     },
@@ -13,15 +14,15 @@
       "data": {
         "id": "engineering",
         "label": "الهندسة كنمط تفكير",
-        "description": "منهج تحليلي وبنائي."
+        "description": "التفكير البنائي والتحليل المنهجي."
       }
     },
 
     {
       "data": {
-        "id": "business",
-        "label": "تطوير الأعمال",
-        "description": "ربط القيمة بالفرص."
+        "id": "systems",
+        "label": "بناء الأنظمة",
+        "description": "تحويل الأفكار إلى هياكل قابلة للتوسع."
       }
     },
 
@@ -29,7 +30,15 @@
       "data": {
         "id": "operations",
         "label": "إدارة العمليات",
-        "description": "تصميم وتحسين التدفقات."
+        "description": "تصميم وتحسين التدفقات التشغيلية."
+      }
+    },
+
+    {
+      "data": {
+        "id": "business",
+        "label": "تطوير الأعمال",
+        "description": "ربط القيمة بالفرص والأسواق."
       }
     },
 
@@ -44,8 +53,8 @@
     {
       "data": {
         "id": "crowds",
-        "label": "إدارة الحشود والفعاليات",
-        "description": "تنسيق الأنظمة البشرية الحية."
+        "label": "إدارة الحشود",
+        "description": "إدارة الأنظمة البشرية الحية."
       }
     },
 
@@ -59,61 +68,55 @@
 
     {
       "data": {
-        "id": "systems",
-        "label": "بناء الأنظمة",
-        "description": "تحويل الأفكار إلى هياكل قابلة للتوسع."
+        "id": "problem-solving",
+        "label": "حل المشكلات",
+        "description": "تحليل التحديات وإعادة تركيبها."
+      }
+    },
+
+    {
+      "data": {
+        "id": "knowledge",
+        "label": "إدارة المعرفة",
+        "description": "تنظيم ونقل وتطوير المعرفة."
+      }
+    },
+
+    {
+      "data": {
+        "id": "strategy",
+        "label": "التفكير الاستراتيجي",
+        "description": "رؤية الأنظمة طويلة الأمد."
       }
     }
+
   ],
 
   "links": [
-    {
-      "data": {
-        "source": "core",
-        "target": "engineering"
-      }
-    },
 
-    {
-      "data": {
-        "source": "core",
-        "target": "business"
-      }
-    },
+    { "data": { "source": "core", "target": "engineering" }},
+    { "data": { "source": "core", "target": "business" }},
+    { "data": { "source": "core", "target": "operations" }},
+    { "data": { "source": "core", "target": "training" }},
+    { "data": { "source": "core", "target": "crowds" }},
+    { "data": { "source": "core", "target": "leadership" }},
+    { "data": { "source": "core", "target": "systems" }},
 
-    {
-      "data": {
-        "source": "core",
-        "target": "operations"
-      }
-    },
+    { "data": { "source": "engineering", "target": "systems" }},
+    { "data": { "source": "engineering", "target": "problem-solving" }},
 
-    {
-      "data": {
-        "source": "core",
-        "target": "training"
-      }
-    },
+    { "data": { "source": "systems", "target": "operations" }},
+    { "data": { "source": "systems", "target": "strategy" }},
 
-    {
-      "data": {
-        "source": "core",
-        "target": "crowds"
-      }
-    },
+    { "data": { "source": "operations", "target": "business" }},
 
-    {
-      "data": {
-        "source": "core",
-        "target": "leadership"
-      }
-    },
+    { "data": { "source": "training", "target": "knowledge" }},
 
-    {
-      "data": {
-        "source": "core",
-        "target": "systems"
-      }
-    }
+    { "data": { "source": "leadership", "target": "crowds" }},
+
+    { "data": { "source": "strategy", "target": "business" }},
+
+    { "data": { "source": "knowledge", "target": "engineering" }}
+
   ]
 }
