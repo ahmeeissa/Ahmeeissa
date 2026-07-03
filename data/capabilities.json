@@ -154,3 +154,30 @@
     "description":"تحويل الخبرة العملية إلى نماذج يمكن إعادة استخدامها."
   }
 }
+{
+  "data":{
+    "source":"business",
+    "target":"ecommerce"
+  }
+},
+
+{
+  "data":{
+    "source":"crowd",
+    "target":"field"
+  }
+},
+
+{
+  "data":{
+    "source":"training",
+    "target":"knowledge"
+  }
+},
+
+{
+  "data":{
+    "source":"knowledge",
+    "target":"systems"
+  }
+}
