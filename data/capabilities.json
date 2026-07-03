@@ -1,183 +1,119 @@
 {
-  "nodes":[
+  "nodes": [
     {
-      "data":{
-        "id":"ahmed",
-        "label":"Ahmed",
-        "description":"منظومة قدرات مترابطة وليست مساراً زمنياً.",
-        "type":"core"
+      "data": {
+        "id": "core",
+        "label": "Ahmeeissa",
+        "description": "خريطة العلاقات المهنية والقدرات"
+      },
+      "classes": "core"
+    },
+
+    {
+      "data": {
+        "id": "engineering",
+        "label": "الهندسة كنمط تفكير",
+        "description": "منهج تحليلي وبنائي."
       }
     },
 
     {
-      "data":{
-        "id":"engineering",
-        "label":"الهندسة",
-        "description":"الهندسة كأسلوب تفكير وبناء وتحليل."
+      "data": {
+        "id": "business",
+        "label": "تطوير الأعمال",
+        "description": "ربط القيمة بالفرص."
       }
     },
 
     {
-      "data":{
-        "id":"systems",
-        "label":"بناء الأنظمة",
-        "description":"تحويل الأفكار إلى هياكل قابلة للتوسع."
+      "data": {
+        "id": "operations",
+        "label": "إدارة العمليات",
+        "description": "تصميم وتحسين التدفقات."
       }
     },
 
     {
-      "data":{
-        "id":"operations",
-        "label":"إدارة العمليات",
-        "description":"تصميم وتحسين تدفقات العمل."
+      "data": {
+        "id": "training",
+        "label": "التدريب ونقل المعرفة",
+        "description": "تحويل الخبرة إلى أنظمة تعلم."
       }
     },
 
     {
-      "data":{
-        "id":"business",
-        "label":"تطوير الأعمال",
-        "description":"ربط القيمة بالفرص والنمو."
+      "data": {
+        "id": "crowds",
+        "label": "إدارة الحشود والفعاليات",
+        "description": "تنسيق الأنظمة البشرية الحية."
       }
     },
 
     {
-      "data":{
-        "id":"training",
-        "label":"التدريب",
-        "description":"تحويل الخبرة إلى معرفة قابلة للنقل."
+      "data": {
+        "id": "leadership",
+        "label": "القيادة الارتجالية",
+        "description": "اتخاذ القرار تحت الضغط."
       }
     },
 
     {
-      "data":{
-        "id":"crowd",
-        "label":"إدارة الحشود",
-        "description":"إدارة الأنظمة البشرية الحية."
-      }
-    },
-
-    {
-      "data":{
-        "id":"leadership",
-        "label":"القيادة",
-        "description":"اتخاذ القرار وتحمل المسؤولية تحت الضغط."
+      "data": {
+        "id": "systems",
+        "label": "بناء الأنظمة",
+        "description": "تحويل الأفكار إلى هياكل قابلة للتوسع."
       }
     }
   ],
 
-  "links":[
+  "links": [
     {
-      "data":{
-        "source":"ahmed",
-        "target":"engineering"
+      "data": {
+        "source": "core",
+        "target": "engineering"
       }
     },
 
     {
-      "data":{
-        "source":"ahmed",
-        "target":"leadership"
+      "data": {
+        "source": "core",
+        "target": "business"
       }
     },
 
     {
-      "data":{
-        "source":"engineering",
-        "target":"systems"
+      "data": {
+        "source": "core",
+        "target": "operations"
       }
     },
 
     {
-      "data":{
-        "source":"systems",
-        "target":"operations"
+      "data": {
+        "source": "core",
+        "target": "training"
       }
     },
 
     {
-      "data":{
-        "source":"operations",
-        "target":"business"
+      "data": {
+        "source": "core",
+        "target": "crowds"
       }
     },
 
     {
-      "data":{
-        "source":"training",
-        "target":"operations"
+      "data": {
+        "source": "core",
+        "target": "leadership"
       }
     },
 
     {
-      "data":{
-        "source":"crowd",
-        "target":"leadership"
-      }
-    },
-
-    {
-      "data":{
-        "source":"leadership",
-        "target":"training"
-      }
-    },
-
-    {
-      "data":{
-        "source":"leadership",
-        "target":"business"
+      "data": {
+        "source": "core",
+        "target": "systems"
       }
     }
   ]
-}
-{
-  "data":{
-    "id":"ecommerce",
-    "label":"التجارة الإلكترونية",
-    "description":"إدارة وتطوير أكثر من 3000 منتج عبر عدة منصات."
-  }
-},
-
-{
-  "data":{
-    "id":"field",
-    "label":"المشاريع الميدانية",
-    "description":"إدارة فرق وعمليات حية ضمن بيئات متغيرة."
-  }
-},
-
-{
-  "data":{
-    "id":"knowledge",
-    "label":"نقل المعرفة",
-    "description":"تحويل الخبرة العملية إلى نماذج يمكن إعادة استخدامها."
-  }
-}
-{
-  "data":{
-    "source":"business",
-    "target":"ecommerce"
-  }
-},
-
-{
-  "data":{
-    "source":"crowd",
-    "target":"field"
-  }
-},
-
-{
-  "data":{
-    "source":"training",
-    "target":"knowledge"
-  }
-},
-
-{
-  "data":{
-    "source":"knowledge",
-    "target":"systems"
-  }
 }
