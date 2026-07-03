@@ -1,103 +1,105 @@
 fetch("./data/capabilities.json")
-
-.then(r=>r.json())
-
-.then(data=>{
+.then(r => r.json())
+.then(data => {
 
 const cy = cytoscape({
 
-container:document.getElementById("cy"),
+container: document.getElementById("cy"),
 
-elements:[
-
+elements: [
 ...data.nodes,
-
 ...data.links
+],
+
+style: [
+
+{
+selector: "node",
+style: {
+
+label: "data(label)",
+
+width: 90,
+height: 90,
+
+"text-valign": "center",
+"text-halign": "center",
+
+"font-size": "13px",
+
+color: "#fff",
+
+"background-color": "#1f6feb",
+
+"text-wrap": "wrap",
+"text-max-width": "110px",
+
+"border-width": 2,
+"border-color": "rgba(255,255,255,.15)"
+}
+},
+
+{
+selector: ".core",
+style: {
+
+width: 150,
+height: 150,
+
+"background-color": "#58a6ff",
+
+"font-size": "18px"
+}
+},
+
+{
+selector: "edge",
+style: {
+
+width: 1.5,
+
+"line-color": "rgba(255,255,255,.25)",
+
+opacity: 0.7,
+
+"curve-style": "bezier"
+}
+},
+
+{
+selector: ".fade",
+style: {
+opacity: 0.08
+}
+}
 
 ],
 
-style:[
-
-{
-
-selector:"node",
-
-style:{
-
-label:"data(label)",
-
-width:90,
-
-height:90,
-
-"text-valign":"center",
-
-"text-halign":"center",
-
-"font-size":"13px",
-
-color:"#fff",
-
-"background-color":"#1f6feb",
-
-"text-wrap":"wrap",
-
-"text-max-width":"110px",
-
-"border-width":2,
-
-"border-color":"rgba(255,255,255,.15)"
+layout: {
+name: "cose",
+animate: true,
+padding: 100
 }
 
-},
+});
 
-{
 
-selector:'node[type="core"]',
+cy.on("tap", "node", evt => {
 
-style:{
+const node = evt.target;
 
-width:150,
+const connected = node.closedNeighborhood();
 
-height:150,
+cy.elements().addClass("fade");
 
-"background-color":"#58a6ff",
+connected.removeClass("fade");
 
-"font-size":"18px",
+document.getElementById("title").innerText =
+node.data("label");
 
-"font-weight":"300"
-}
+document.getElementById("description").innerText =
+node.data("description");
 
-},
+});
 
-{
-
-selector:"edge",
-
-style:{
-
-width:1.5,
-
-"line-color":"rgba(255,255,255,.25)",
-
-opacity:.7,
-
-"curve-style":"bezier"
-
-}
-
-},
-
-{
-
-selector:".fade",
-
-style:{
-
-opacity:.08
-
-}
-
-}
-
-],
+});
