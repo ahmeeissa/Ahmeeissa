@@ -1,1 +1,16 @@
+[
+  {
+    "id": "awareness",
+    "label": "الوعي"
+  },
 
+  {
+    "id": "meaning",
+    "label": "المعنى"
+  },
+
+  {
+    "id": "systems-thinking",
+    "label": "التفكير المنظومي"
+  }
+]
