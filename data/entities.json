@@ -1,0 +1,43 @@
+[
+  {
+    "id": "engineering",
+    "type": "capability",
+    "label": "الهندسة كنمط تفكير"
+  },
+
+  {
+    "id": "systems",
+    "type": "capability",
+    "label": "بناء الأنظمة"
+  },
+
+  {
+    "id": "operations",
+    "type": "capability",
+    "label": "إدارة العمليات"
+  },
+
+  {
+    "id": "training",
+    "type": "capability",
+    "label": "التدريب ونقل المعرفة"
+  },
+
+  {
+    "id": "crowds",
+    "type": "capability",
+    "label": "إدارة الحشود"
+  },
+
+  {
+    "id": "leadership",
+    "type": "capability",
+    "label": "القيادة الارتجالية"
+  },
+
+  {
+    "id": "ahmeeissa",
+    "type": "meta-project",
+    "label": "Ahmeeissa"
+  }
+]
