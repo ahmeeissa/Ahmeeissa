@@ -1,1 +1,36 @@
+[
+  {
+    "source": "engineering",
+    "target": "systems"
+  },
 
+  {
+    "source": "systems",
+    "target": "operations"
+  },
+
+  {
+    "source": "operations",
+    "target": "leadership"
+  },
+
+  {
+    "source": "training",
+    "target": "awareness"
+  },
+
+  {
+    "source": "morning-reflection",
+    "target": "meaning"
+  },
+
+  {
+    "source": "heritage-value",
+    "target": "awareness"
+  },
+
+  {
+    "source": "ahmeeissa",
+    "target": "knowledge-space"
+  }
+]
