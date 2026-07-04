@@ -3,9 +3,9 @@
 
     {
       "data": {
-        "id": "core",
+        "id": "ahmeeissa",
         "label": "Ahmeeissa",
-        "description": "منظومة القدرات والعلاقات المهنية"
+        "description": "بيئة التكوّن الكلية"
       },
       "classes": "core"
     },
@@ -13,8 +13,8 @@
     {
       "data": {
         "id": "engineering",
-        "label": "الهندسة كنمط تفكير",
-        "description": "التفكير البنائي والتحليل المنهجي."
+        "label": "الهندسة",
+        "description": "الهندسة كنمط تفكير."
       }
     },
 
@@ -22,7 +22,7 @@
       "data": {
         "id": "systems",
         "label": "بناء الأنظمة",
-        "description": "تحويل الأفكار إلى هياكل قابلة للتوسع."
+        "description": "تحويل الأفكار إلى بنى قابلة للنمو."
       }
     },
 
@@ -30,7 +30,7 @@
       "data": {
         "id": "operations",
         "label": "إدارة العمليات",
-        "description": "تصميم وتحسين التدفقات التشغيلية."
+        "description": "تنظيم التدفقات والأنظمة الحية."
       }
     },
 
@@ -38,15 +38,23 @@
       "data": {
         "id": "business",
         "label": "تطوير الأعمال",
-        "description": "ربط القيمة بالفرص والأسواق."
+        "description": "ربط القيمة بالفرص."
       }
     },
 
     {
       "data": {
         "id": "training",
-        "label": "التدريب ونقل المعرفة",
-        "description": "تحويل الخبرة إلى أنظمة تعلم."
+        "label": "نقل المعرفة",
+        "description": "تحويل الخبرة إلى معرفة قابلة للمشاركة."
+      }
+    },
+
+    {
+      "data": {
+        "id": "leadership",
+        "label": "القيادة",
+        "description": "اتخاذ القرار تحت الضغط."
       }
     },
 
@@ -54,39 +62,39 @@
       "data": {
         "id": "crowds",
         "label": "إدارة الحشود",
-        "description": "إدارة الأنظمة البشرية الحية."
+        "description": "تنسيق الأنظمة البشرية."
       }
     },
 
     {
       "data": {
-        "id": "leadership",
-        "label": "القيادة الارتجالية",
-        "description": "اتخاذ القرار تحت الضغط."
+        "id": "reflection",
+        "label": "تفكير صباحي متأمل",
+        "description": "أرشيف نصي حي."
       }
     },
 
     {
       "data": {
-        "id": "problem-solving",
-        "label": "حل المشكلات",
-        "description": "تحليل التحديات وإعادة تركيبها."
+        "id": "heritage",
+        "label": "الموروث والقيمة",
+        "description": "تسجيل صوتي ومفهوم متولد."
       }
     },
 
     {
       "data": {
-        "id": "knowledge",
-        "label": "إدارة المعرفة",
-        "description": "تنظيم ونقل وتطوير المعرفة."
+        "id": "awareness",
+        "label": "الوعي",
+        "description": "مفهوم مركزي."
       }
     },
 
     {
       "data": {
-        "id": "strategy",
-        "label": "التفكير الاستراتيجي",
-        "description": "رؤية الأنظمة طويلة الأمد."
+        "id": "meaning",
+        "label": "المعنى",
+        "description": "محور إدراكي."
       }
     }
 
@@ -94,29 +102,75 @@
 
   "links": [
 
-    { "data": { "source": "core", "target": "engineering" }},
-    { "data": { "source": "core", "target": "business" }},
-    { "data": { "source": "core", "target": "operations" }},
-    { "data": { "source": "core", "target": "training" }},
-    { "data": { "source": "core", "target": "crowds" }},
-    { "data": { "source": "core", "target": "leadership" }},
-    { "data": { "source": "core", "target": "systems" }},
+    {
+      "data": {
+        "source": "ahmeeissa",
+        "target": "engineering"
+      }
+    },
 
-    { "data": { "source": "engineering", "target": "systems" }},
-    { "data": { "source": "engineering", "target": "problem-solving" }},
+    {
+      "data": {
+        "source": "engineering",
+        "target": "systems"
+      }
+    },
 
-    { "data": { "source": "systems", "target": "operations" }},
-    { "data": { "source": "systems", "target": "strategy" }},
+    {
+      "data": {
+        "source": "systems",
+        "target": "operations"
+      }
+    },
 
-    { "data": { "source": "operations", "target": "business" }},
+    {
+      "data": {
+        "source": "operations",
+        "target": "business"
+      }
+    },
 
-    { "data": { "source": "training", "target": "knowledge" }},
+    {
+      "data": {
+        "source": "training",
+        "target": "awareness"
+      }
+    },
 
-    { "data": { "source": "leadership", "target": "crowds" }},
+    {
+      "data": {
+        "source": "reflection",
+        "target": "meaning"
+      }
+    },
 
-    { "data": { "source": "strategy", "target": "business" }},
+    {
+      "data": {
+        "source": "heritage",
+        "target": "awareness"
+      }
+    },
 
-    { "data": { "source": "knowledge", "target": "engineering" }}
+    {
+      "data": {
+        "source": "leadership",
+        "target": "crowds"
+      }
+    },
+
+    {
+      "data": {
+        "source": "leadership",
+        "target": "operations"
+      }
+    },
+
+    {
+      "data": {
+        "source": "awareness",
+        "target": "engineering"
+      }
+    }
 
   ]
 }
