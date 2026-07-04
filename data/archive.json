@@ -1,1 +1,13 @@
+[
+  {
+    "id": "morning-reflection",
+    "label": "تفكير صباحي متأمل",
+    "type": "text"
+  },
 
+  {
+    "id": "heritage-value",
+    "label": "الموروث والقيمة",
+    "type": "audio"
+  }
+]
