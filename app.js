@@ -14,92 +14,58 @@ elements: [
 style: [
 
 {
-selector: "node",
-style: {
+selector:"node",
 
-label: "data(label)",
+style:{
 
-width: 90,
-height: 90,
+label:"data(label)",
 
-"text-valign": "center",
-"text-halign": "center",
+width:90,
+height:90,
 
-"font-size": "13px",
+"text-valign":"center",
+"text-halign":"center",
 
-color: "#fff",
+"text-wrap":"wrap",
+"text-max-width":"110px",
 
-"background-color": "#1f6feb",
+"font-size":"12px",
 
-"text-wrap": "wrap",
-"text-max-width": "110px",
+color:"#ffffff",
 
-"border-width": 2,
-"border-color": "rgba(255,255,255,.15)"
+"background-color":"#1f6feb",
+
+"border-width":1.5,
+
+"border-color":"rgba(255,255,255,.15)"
 }
 },
 
 {
-selector: ".core",
-style: {
+selector:".core",
 
-width: 150,
-height: 150,
+style:{
 
-"background-color": "#58a6ff",
+width:180,
+height:180,
 
-"font-size": "18px"
+"background-color":"#58a6ff",
+
+"font-size":"20px",
+
+"font-weight":"200"
 }
 },
 
 {
-selector: "edge",
-style: {
+selector:"edge",
 
-width: 1.5,
+style:{
 
-"line-color": "rgba(255,255,255,.25)",
+width:1.2,
 
-opacity: 0.7,
+"line-color":"rgba(255,255,255,.18)",
 
-"curve-style": "bezier"
-}
-},
-
-{
-selector: ".fade",
-style: {
-opacity: 0.08
+"curve-style":"bezier"
 }
 }
-
-],
-
-layout: {
-name: "cose",
-animate: true,
-padding: 100
-}
-
-});
-
-
-cy.on("tap", "node", evt => {
-
-const node = evt.target;
-
-const connected = node.closedNeighborhood();
-
-cy.elements().addClass("fade");
-
-connected.removeClass("fade");
-
-document.getElementById("title").innerText =
-node.data("label");
-
-document.getElementById("description").innerText =
-node.data("description");
-
-});
-
-});
