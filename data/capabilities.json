@@ -1,3 +1,4 @@
+```json
 {
   "nodes": [
 
@@ -14,7 +15,8 @@
       "data": {
         "id": "engineering",
         "label": "الهندسة",
-        "description": "الهندسة كنمط تفكير."
+        "description": "الهندسة كنمط تفكير.",
+        "type": "capability"
       }
     },
 
@@ -22,7 +24,8 @@
       "data": {
         "id": "systems",
         "label": "بناء الأنظمة",
-        "description": "تحويل الأفكار إلى بنى قابلة للنمو."
+        "description": "تحويل الأفكار إلى بنى قابلة للنمو.",
+        "type": "capability"
       }
     },
 
@@ -30,7 +33,8 @@
       "data": {
         "id": "operations",
         "label": "إدارة العمليات",
-        "description": "تنظيم التدفقات والأنظمة الحية."
+        "description": "تنظيم التدفقات والأنظمة الحية.",
+        "type": "capability"
       }
     },
 
@@ -38,7 +42,8 @@
       "data": {
         "id": "business",
         "label": "تطوير الأعمال",
-        "description": "ربط القيمة بالفرص."
+        "description": "ربط القيمة بالفرص.",
+        "type": "capability"
       }
     },
 
@@ -46,7 +51,8 @@
       "data": {
         "id": "training",
         "label": "نقل المعرفة",
-        "description": "تحويل الخبرة إلى معرفة قابلة للمشاركة."
+        "description": "تحويل الخبرة إلى معرفة قابلة للمشاركة.",
+        "type": "capability"
       }
     },
 
@@ -54,7 +60,8 @@
       "data": {
         "id": "leadership",
         "label": "القيادة",
-        "description": "اتخاذ القرار تحت الضغط."
+        "description": "اتخاذ القرار تحت الضغط.",
+        "type": "capability"
       }
     },
 
@@ -62,23 +69,8 @@
       "data": {
         "id": "crowds",
         "label": "إدارة الحشود",
-        "description": "تنسيق الأنظمة البشرية."
-      }
-    },
-
-    {
-      "data": {
-        "id": "reflection",
-        "label": "تفكير صباحي متأمل",
-        "description": "أرشيف نصي حي."
-      }
-    },
-
-    {
-      "data": {
-        "id": "heritage",
-        "label": "الموروث والقيمة",
-        "description": "تسجيل صوتي ومفهوم متولد."
+        "description": "تنسيق الأنظمة البشرية.",
+        "type": "capability"
       }
     },
 
@@ -86,7 +78,8 @@
       "data": {
         "id": "awareness",
         "label": "الوعي",
-        "description": "مفهوم مركزي."
+        "description": "مفهوم مركزي.",
+        "type": "concept"
       }
     },
 
@@ -94,7 +87,44 @@
       "data": {
         "id": "meaning",
         "label": "المعنى",
-        "description": "محور إدراكي."
+        "description": "محور إدراكي.",
+        "type": "concept"
+      }
+    },
+
+    {
+      "data": {
+        "id": "reflection",
+        "label": "تفكير صباحي متأمل",
+        "description": "أرشيف نصي حي.",
+        "type": "archive"
+      }
+    },
+
+    {
+      "data": {
+        "id": "heritage",
+        "label": "الموروث والقيمة",
+        "description": "تسجيل صوتي ومفهوم متولد.",
+        "type": "archive"
+      }
+    },
+
+    {
+      "data": {
+        "id": "ahmeeissa-project",
+        "label": "مشروع Ahmeeissa",
+        "description": "بناء بيئة التكوّن الكلية.",
+        "type": "project"
+      }
+    },
+
+    {
+      "data": {
+        "id": "knowledge-space",
+        "label": "مساحة التكوّن",
+        "description": "نظام معرفي حي.",
+        "type": "project"
       }
     }
 
@@ -170,7 +200,22 @@
         "source": "awareness",
         "target": "engineering"
       }
+    },
+
+    {
+      "data": {
+        "source": "ahmeeissa",
+        "target": "ahmeeissa-project"
+      }
+    },
+
+    {
+      "data": {
+        "source": "ahmeeissa-project",
+        "target": "knowledge-space"
+      }
     }
 
   ]
 }
+```
