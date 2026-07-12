@@ -1,7 +1,33 @@
-[
-  {
-    "id": "knowledge-space",
-    "label": "مساحة التكوّن",
-    "type": "project"
+{
+  "name": "Ahmed Eissa",
+  "brand": "Ahmeeissa",
+  "headline": "Biomedical Engineer • Business Development • Systems Thinker",
+  "location": "Riyadh, Saudi Arabia",
+  "languages": [
+    "Arabic",
+    "English"
+  ],
+  "summary": "Biomedical Engineer with multidisciplinary experience spanning engineering, technical support, business development, operations, training, event management, and systems thinking. Interested in designing knowledge structures that connect people, ideas, and capabilities.",
+  "coreValues": [
+    "Integrity",
+    "Responsibility",
+    "Learning",
+    "Curiosity",
+    "Systems Thinking"
+  ],
+  "interests": [
+    "Engineering",
+    "Knowledge Systems",
+    "Education",
+    "Leadership",
+    "Operations",
+    "Artificial Intelligence",
+    "Documentation"
+  ],
+  "contacts": {
+    "email": "",
+    "phone": "",
+    "website": "",
+    "github": ""
   }
-]
+}
