@@ -1,33 +1,80 @@
-{
-  "name": "Ahmed Eissa",
-  "brand": "Ahmeeissa",
-  "headline": "Biomedical Engineer • Business Development • Systems Thinker",
-  "location": "Riyadh, Saudi Arabia",
-  "languages": [
-    "Arabic",
-    "English"
-  ],
-  "summary": "Biomedical Engineer with multidisciplinary experience spanning engineering, technical support, business development, operations, training, event management, and systems thinking. Interested in designing knowledge structures that connect people, ideas, and capabilities.",
-  "coreValues": [
-    "Integrity",
-    "Responsibility",
-    "Learning",
-    "Curiosity",
-    "Systems Thinking"
-  ],
-  "interests": [
-    "Engineering",
-    "Knowledge Systems",
-    "Education",
-    "Leadership",
-    "Operations",
-    "Artificial Intelligence",
-    "Documentation"
-  ],
-  "contacts": {
-    "email": "",
-    "phone": "",
-    "website": "",
-    "github": ""
+[
+  {
+    "id": 1,
+    "name": "Ahmeeissa",
+    "status": "Active",
+    "category": "Platform",
+    "year": "2026",
+    "description": "An interactive knowledge platform that presents capabilities, relationships and the evolution of ideas instead of a traditional portfolio.",
+    "focus": [
+      "Interactive Map",
+      "Knowledge Graph",
+      "Personal Architecture"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Living Archive",
+    "status": "In Progress",
+    "category": "Knowledge",
+    "year": "2026",
+    "description": "A continuously evolving archive that preserves texts, recordings, concepts and their transformations over time.",
+    "focus": [
+      "Archive",
+      "Version History",
+      "Knowledge Management"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Transformation Tracker",
+    "status": "Research",
+    "category": "Research",
+    "year": "2026",
+    "description": "A framework for tracking how ideas emerge, evolve, merge and branch into new concepts.",
+    "focus": [
+      "Timeline",
+      "Relationships",
+      "Evolution"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Cognitive Museum",
+    "status": "Concept",
+    "category": "Experience",
+    "year": "2026",
+    "description": "A digital environment where visitors explore the formation of ideas rather than only their final outcomes.",
+    "focus": [
+      "Interactive Experience",
+      "Visualization",
+      "Knowledge Journey"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Idea Laboratory",
+    "status": "Concept",
+    "category": "Research",
+    "year": "2026",
+    "description": "An experimental space for connecting observations, hypotheses and conceptual models into reusable knowledge.",
+    "focus": [
+      "Experimentation",
+      "Concept Design",
+      "Knowledge Discovery"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Professional Capability Map",
+    "status": "Completed",
+    "category": "Career",
+    "year": "2026",
+    "description": "A capability-centered representation of professional experience that emphasizes recurring patterns instead of chronological job history.",
+    "focus": [
+      "Capabilities",
+      "Relationships",
+      "Visualization"
+    ]
   }
-}
+]
