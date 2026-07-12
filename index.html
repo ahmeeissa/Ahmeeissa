@@ -1,27 +1,162 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ahmeeissa</title>
 
-  <link rel="stylesheet" href="./style.css">
+<meta charset="UTF-8">
 
-  <script src="https://unpkg.com/cytoscape@3.30.4/dist/cytoscape.min.js"></script>
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
+
+<title>Ahmeeissa</title>
+
+<meta
+name="description"
+content="Ahmeeissa — بيئة معرفية حيّة تمثل القدرات والمفاهيم والمشاريع والأرشيف والعلاقات."
+/>
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+/>
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+/>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+rel="stylesheet"
+/>
+
+<link
+rel="stylesheet"
+href="./style.css"
+/>
+
+<script src="https://unpkg.com/cytoscape@3.30.4/dist/cytoscape.min.js"></script>
+
 </head>
 
 <body>
 
+<header id="topbar">
+
+<div id="brand">
+
+<h1>
+Ahmeeissa
+</h1>
+
+<span>
+Knowledge Environment
+</span>
+
+</div>
+
+<div id="toolbar">
+
+<input
+id="search"
+type="search"
+placeholder="ابحث..."
+autocomplete="off"
+/>
+
+<button id="resetView">
+إعادة العرض
+</button>
+
+</div>
+
+</header>
+
+<main id="workspace">
+
+<section id="graph">
+
 <div id="cy"></div>
 
-<div id="panel">
-  <h2 id="title">Ahmeeissa</h2>
-  <p id="description">
-    اختر أي عقدة لاستكشاف العلاقات.
-  </p>
+</section>
+
+<aside id="panel">
+
+<div class="panel-section">
+
+<h2 id="title">
+Ahmeeissa
+</h2>
+
+<p id="description">
+
+بيئة التكوّن الكلية.
+
+</p>
+
 </div>
+
+<div class="panel-section">
+
+<h3>
+النوع
+</h3>
+
+<p id="type">
+
+—
+
+</p>
+
+</div>
+
+<div class="panel-section">
+
+<h3>
+العلاقات
+</h3>
+
+<p id="connections">
+
+0
+
+</p>
+
+</div>
+
+<div class="panel-section">
+
+<h3>
+المعرف
+</h3>
+
+<p id="nodeId">
+
+—
+
+</p>
+
+</div>
+
+</aside>
+
+</main>
+
+<footer id="statusBar">
+
+<span id="status">
+
+Ready
+
+</span>
+
+</footer>
 
 <script src="./app.js"></script>
 
 </body>
+
 </html>
