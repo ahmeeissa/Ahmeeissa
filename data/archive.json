@@ -1,13 +1,98 @@
 [
   {
-    "id": "morning-reflection",
-    "label": "تفكير صباحي متأمل",
-    "type": "text"
+    "id": 1,
+    "date": "2006-2011",
+    "title": "Biomedical Engineering",
+    "description": "University studies established a systems-oriented approach to understanding complex technical and biological environments.",
+    "type": "Education",
+    "tags": [
+      "Engineering",
+      "Systems Thinking",
+      "Biomedical"
+    ]
   },
-
   {
-    "id": "heritage-value",
-    "label": "الموروث والقيمة",
-    "type": "audio"
+    "id": 2,
+    "date": "2015-2017",
+    "title": "Medical Sales & Technical Support",
+    "description": "Integrated engineering knowledge with scientific communication, physician support and business development.",
+    "type": "Professional Experience",
+    "tags": [
+      "Healthcare",
+      "Technical Support",
+      "Communication"
+    ]
+  },
+  {
+    "id": 3,
+    "date": "2017-2021",
+    "title": "Operations & Business Development",
+    "description": "Expanded into operational planning, process improvement and organizational coordination across multidisciplinary environments.",
+    "type": "Professional Experience",
+    "tags": [
+      "Operations",
+      "Leadership",
+      "Business"
+    ]
+  },
+  {
+    "id": 4,
+    "date": "2022-2026",
+    "title": "Crowd & Event Management",
+    "description": "Applied adaptive leadership and systems thinking in dynamic, high-pressure event environments.",
+    "type": "Professional Experience",
+    "tags": [
+      "Events",
+      "Leadership",
+      "Coordination"
+    ]
+  },
+  {
+    "id": 5,
+    "date": "2026",
+    "title": "Living Archive Initiative",
+    "description": "Started organizing personal writings, recordings and concepts into a structured, searchable and evolving archive.",
+    "type": "Knowledge Project",
+    "tags": [
+      "Archive",
+      "Documentation",
+      "Knowledge"
+    ]
+  },
+  {
+    "id": 6,
+    "date": "2026",
+    "title": "Transformation Tracker",
+    "description": "Introduced a methodology for documenting how ideas evolve through observation, refinement and reinterpretation.",
+    "type": "Research",
+    "tags": [
+      "Research",
+      "Evolution",
+      "Ideas"
+    ]
+  },
+  {
+    "id": 7,
+    "date": "2026",
+    "title": "Ahmeeissa Platform",
+    "description": "Development of an interactive platform that represents capabilities, relationships and cognitive structures rather than a conventional portfolio.",
+    "type": "Platform",
+    "tags": [
+      "Platform",
+      "Visualization",
+      "Knowledge Graph"
+    ]
+  },
+  {
+    "id": 8,
+    "date": "Future",
+    "title": "Cognitive Museum",
+    "description": "A planned digital environment allowing visitors to explore the evolution of ideas, projects and conceptual relationships.",
+    "type": "Vision",
+    "tags": [
+      "Museum",
+      "Interactive",
+      "Future"
+    ]
   }
 ]
