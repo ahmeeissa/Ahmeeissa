@@ -1,36 +1,134 @@
 [
   {
-    "source": "engineering",
-    "target": "systems"
+    "from": 1,
+    "to": 2,
+    "type": "supports",
+    "label": "enables knowledge transfer"
   },
-
   {
-    "source": "systems",
-    "target": "operations"
+    "from": 1,
+    "to": 4,
+    "type": "supports",
+    "label": "guides operations"
   },
-
   {
-    "source": "operations",
-    "target": "leadership"
+    "from": 1,
+    "to": 7,
+    "type": "origin",
+    "label": "engineering foundation"
   },
-
   {
-    "source": "training",
-    "target": "awareness"
+    "from": 1,
+    "to": 9,
+    "type": "extends",
+    "label": "develops observation"
   },
-
   {
-    "source": "morning-reflection",
-    "target": "meaning"
+    "from": 2,
+    "to": 8,
+    "type": "supports",
+    "label": "scientific communication"
   },
-
   {
-    "source": "heritage-value",
-    "target": "awareness"
+    "from": 2,
+    "to": 11,
+    "type": "extends",
+    "label": "knowledge architecture"
   },
-
   {
-    "source": "ahmeeissa",
-    "target": "knowledge-space"
+    "from": 3,
+    "to": 4,
+    "type": "collaborates",
+    "label": "business execution"
+  },
+  {
+    "from": 3,
+    "to": 5,
+    "type": "supports",
+    "label": "strategic leadership"
+  },
+  {
+    "from": 4,
+    "to": 5,
+    "type": "develops",
+    "label": "operational leadership"
+  },
+  {
+    "from": 4,
+    "to": 6,
+    "type": "applied_in",
+    "label": "event management"
+  },
+  {
+    "from": 5,
+    "to": 6,
+    "type": "applied_in",
+    "label": "field coordination"
+  },
+  {
+    "from": 5,
+    "to": 10,
+    "type": "supports",
+    "label": "decision making"
+  },
+  {
+    "from": 6,
+    "to": 10,
+    "type": "requires",
+    "label": "adaptive response"
+  },
+  {
+    "from": 7,
+    "to": 8,
+    "type": "supports",
+    "label": "clinical communication"
+  },
+  {
+    "from": 7,
+    "to": 3,
+    "type": "extends",
+    "label": "technical business value"
+  },
+  {
+    "from": 8,
+    "to": 3,
+    "type": "supports",
+    "label": "relationship building"
+  },
+  {
+    "from": 9,
+    "to": 10,
+    "type": "enables",
+    "label": "problem anticipation"
+  },
+  {
+    "from": 9,
+    "to": 11,
+    "type": "supports",
+    "label": "concept mapping"
+  },
+  {
+    "from": 10,
+    "to": 4,
+    "type": "feedback",
+    "label": "continuous improvement"
+  },
+  {
+    "from": 11,
+    "to": 12,
+    "type": "creates",
+    "label": "living archive"
+  },
+  {
+    "from": 12,
+    "to": 2,
+    "type": "preserves",
+    "label": "knowledge continuity"
+  },
+  {
+    "from": 12,
+    "to": 9,
+    "type": "captures",
+    "label": "evolution of ideas"
   }
 ]
