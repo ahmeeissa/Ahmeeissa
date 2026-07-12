@@ -1,167 +1,146 @@
-{
-  "capabilities": [
-    {
-      "id": "engineering",
-      "title": "Engineering as a Mindset",
-      "category": "Core",
-      "color": "#4f46e5",
-      "description": "Engineering is not presented as a profession alone, but as a structured way of observing, modelling, simplifying complexity and building reliable systems.",
-      "keywords": [
-        "Systems Thinking",
-        "Analysis",
-        "Optimization",
-        "Architecture",
-        "Problem Solving"
-      ],
-      "connections": [
-        "business",
-        "operations",
-        "training",
-        "knowledge",
-        "design"
-      ]
-    },
-    {
-      "id": "business",
-      "title": "Business Development",
-      "category": "Professional",
-      "color": "#2563eb",
-      "description": "Connecting technical understanding with commercial value, identifying opportunities and building sustainable relationships.",
-      "keywords": [
-        "Sales",
-        "Negotiation",
-        "Strategy",
-        "Value Creation",
-        "Partnership"
-      ],
-      "connections": [
-        "engineering",
-        "operations",
-        "communication"
-      ]
-    },
-    {
-      "id": "operations",
-      "title": "Operations Management",
-      "category": "Professional",
-      "color": "#059669",
-      "description": "Managing execution, coordinating resources and transforming plans into repeatable operational systems.",
-      "keywords": [
-        "Execution",
-        "Coordination",
-        "Planning",
-        "Quality",
-        "Process"
-      ],
-      "connections": [
-        "engineering",
-        "business",
-        "events"
-      ]
-    },
-    {
-      "id": "training",
-      "title": "Training & Knowledge Transfer",
-      "category": "Human",
-      "color": "#d97706",
-      "description": "Transforming complex knowledge into understandable learning experiences and practical skills.",
-      "keywords": [
-        "Education",
-        "Mentoring",
-        "Learning",
-        "Communication"
-      ],
-      "connections": [
-        "knowledge",
-        "communication",
-        "engineering"
-      ]
-    },
-    {
-      "id": "events",
-      "title": "Event & Crowd Management",
-      "category": "Professional",
-      "color": "#dc2626",
-      "description": "Coordinating people, logistics and decisions under dynamic conditions while maintaining stability.",
-      "keywords": [
-        "Crowds",
-        "Leadership",
-        "Coordination",
-        "Risk"
-      ],
-      "connections": [
-        "operations",
-        "leadership"
-      ]
-    },
-    {
-      "id": "leadership",
-      "title": "Adaptive Leadership",
-      "category": "Human",
-      "color": "#7c3aed",
-      "description": "Taking responsibility under uncertainty and adapting behaviour according to context.",
-      "keywords": [
-        "Responsibility",
-        "Adaptation",
-        "Decision Making"
-      ],
-      "connections": [
-        "events",
-        "communication",
-        "operations"
-      ]
-    },
-    {
-      "id": "knowledge",
-      "title": "Knowledge Architecture",
-      "category": "Research",
-      "color": "#0891b2",
-      "description": "Designing structures that connect concepts, experiences, observations and evolving ideas.",
-      "keywords": [
-        "Archive",
-        "Ontology",
-        "Knowledge Graph",
-        "Research"
-      ],
-      "connections": [
-        "engineering",
-        "training",
-        "design"
-      ]
-    },
-    {
-      "id": "communication",
-      "title": "Communication",
-      "category": "Human",
-      "color": "#ea580c",
-      "description": "Building shared understanding between technical and non-technical audiences.",
-      "keywords": [
-        "Presentation",
-        "Dialogue",
-        "Explanation"
-      ],
-      "connections": [
-        "training",
-        "business",
-        "leadership"
-      ]
-    },
-    {
-      "id": "design",
-      "title": "Experience Design",
-      "category": "Creative",
-      "color": "#db2777",
-      "description": "Creating meaningful experiences by combining systems thinking with visual and conceptual design.",
-      "keywords": [
-        "UX",
-        "Storytelling",
-        "Visualization",
-        "Interaction"
-      ],
-      "connections": [
-        "knowledge",
-        "engineering"
-      ]
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "title": "Systems Thinking",
+    "category": "Engineering",
+    "description": "Understanding complete systems by analyzing relationships rather than isolated components.",
+    "keywords": [
+      "Systems",
+      "Analysis",
+      "Architecture",
+      "Optimization"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Knowledge Transfer",
+    "category": "Education",
+    "description": "Transforming complex knowledge into structured learning experiences through training, mentoring and technical support.",
+    "keywords": [
+      "Training",
+      "Teaching",
+      "Documentation",
+      "Learning"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Business Development",
+    "category": "Business",
+    "description": "Building partnerships, identifying opportunities and connecting technical value with business objectives.",
+    "keywords": [
+      "Strategy",
+      "Growth",
+      "Sales",
+      "Partnership"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Operations Management",
+    "category": "Management",
+    "description": "Designing efficient operational workflows and coordinating teams toward measurable outcomes.",
+    "keywords": [
+      "Operations",
+      "Planning",
+      "Execution",
+      "Quality"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Field Leadership",
+    "category": "Leadership",
+    "description": "Leading under dynamic conditions while maintaining awareness, responsibility and adaptability.",
+    "keywords": [
+      "Leadership",
+      "Decision Making",
+      "Responsibility",
+      "Execution"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Crowd & Event Management",
+    "category": "Events",
+    "description": "Managing people, logistics and unexpected situations during large-scale events.",
+    "keywords": [
+      "Crowds",
+      "Events",
+      "Coordination",
+      "Safety"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Biomedical Engineering",
+    "category": "Engineering",
+    "description": "Applying engineering principles within healthcare environments, combining technical knowledge with clinical support.",
+    "keywords": [
+      "Biomedical",
+      "Healthcare",
+      "Medical Devices",
+      "Technical Support"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Scientific Communication",
+    "category": "Communication",
+    "description": "Explaining scientific and technical concepts clearly to physicians, teams and decision makers.",
+    "keywords": [
+      "Presentation",
+      "Communication",
+      "Medical",
+      "Knowledge"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Strategic Observation",
+    "category": "Analysis",
+    "description": "Recognizing subtle patterns and early deviations before they evolve into larger systems.",
+    "keywords": [
+      "Observation",
+      "Pattern Recognition",
+      "Critical Thinking",
+      "Insight"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Adaptive Problem Solving",
+    "category": "Thinking",
+    "description": "Responding effectively to unfamiliar challenges by integrating engineering logic with practical decision making.",
+    "keywords": [
+      "Problem Solving",
+      "Adaptability",
+      "Logic",
+      "Innovation"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Cognitive Architecture",
+    "category": "Research",
+    "description": "Designing structures that connect concepts, ideas and long-term knowledge into coherent systems.",
+    "keywords": [
+      "Knowledge Systems",
+      "Ontology",
+      "Concept Mapping",
+      "Research"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Living Archive Design",
+    "category": "Knowledge",
+    "description": "Building evolving archives that preserve ideas, transformations and relationships rather than static documents.",
+    "keywords": [
+      "Archive",
+      "Documentation",
+      "Knowledge Management",
+      "Traceability"
+    ]
+  }
+]
