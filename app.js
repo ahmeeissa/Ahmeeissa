@@ -1,113 +1,97 @@
 fetch("./data/capabilities.json")
 
-.then(r => r.json())
+.then(r=>r.json())
 
-.then(data => {
+.then(data=>{
 
 const cy = cytoscape({
 
-container: document.getElementById("cy"),
+container:document.getElementById("cy"),
 
-elements: [
+elements:[
+
 ...data.nodes,
+
 ...data.links
+
 ],
 
-style: [
+style:[
 
 {
+
 selector:"node",
 
 style:{
 
 label:"data(label)",
 
-width:90,
-height:90,
+width:80,
+
+height:80,
 
 "text-valign":"center",
-"text-halign":"center",
 
-"text-wrap":"wrap",
-"text-max-width":"110px",
+"text-halign":"center",
 
 "font-size":"12px",
 
 color:"#fff",
 
-"background-color":"#444",
+"background-color":"#238636",
 
-"border-width":1.5,
+"text-wrap":"wrap",
 
-"border-color":"rgba(255,255,255,.15)"
+"text-max-width":"100px"
+
 }
+
 },
 
 {
-selector:'node[type="capability"]',
 
-style:{
-"background-color":"#1f6feb"
-}
-},
-
-{
-selector:'node[type="concept"]',
-
-style:{
-"background-color":"#8b5cf6"
-}
-},
-
-{
-selector:'node[type="archive"]',
-
-style:{
-"background-color":"#f59e0b"
-}
-},
-
-{
-selector:'node[type="project"]',
-
-style:{
-"background-color":"#16a34a"
-}
-},
-
-{
-selector:".core",
+selector:'node[type="core"]',
 
 style:{
 
-width:180,
-height:180,
+width:120,
+
+height:120,
 
 "background-color":"#58a6ff",
 
-"font-size":"20px"
+"font-size":"16px"
+
 }
+
 },
 
 {
+
 selector:"edge",
 
 style:{
 
-width:1.2,
+width:2,
 
-"line-color":"rgba(255,255,255,.18)",
+"line-color":"#444",
 
-"curve-style":"bezier"
+opacity:.5
+
 }
+
 },
 
 {
+
 selector:".fade",
 
 style:{
+
 opacity:.08
+
 }
+
 }
 
 ],
@@ -118,11 +102,8 @@ name:"cose",
 
 animate:true,
 
-idealEdgeLength:150,
-
-nodeRepulsion:300000,
-
 padding:100
+
 }
 
 });
@@ -137,33 +118,9 @@ cy.elements().addClass("fade");
 
 connected.removeClass("fade");
 
-document.getElementById("title").innerText =
-node.data("label");
+document.getElementById("title").innerText=node.data("label");
 
-document.getElementById("description").innerText =
-node.data("description");
-
-});
-
-document
-.getElementById("search")
-.addEventListener("input",e=>{
-
-const value = e.target.value.toLowerCase();
-
-cy.nodes().forEach(node=>{
-
-const visible = node
-.data("label")
-.toLowerCase()
-.includes(value);
-
-node.style(
-"display",
-visible ? "element" : "none"
-);
-
-});
+document.getElementById("description").innerText=node.data("description");
 
 });
 
