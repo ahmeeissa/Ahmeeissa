@@ -1,71 +1,74 @@
 [
   {
-    "id": "engineering",
-    "title": "Engineering as a Mindset",
-    "category": "Thinking",
-    "description": "Engineering is not limited to technical work. It is a way of observing systems, identifying constraints, optimizing relationships, and designing sustainable solutions.",
-    "keywords": [
-      "Systems",
-      "Optimization",
-      "Structure",
-      "Problem Solving",
-      "Analysis"
-    ]
+    "id": 1,
+    "name": "Systems Thinking",
+    "summary": "Engineering is treated as a way of thinking rather than a profession. The focus is understanding relationships, feedback loops and system behavior.",
+    "group": "Thinking"
   },
   {
-    "id": "learning",
-    "title": "Continuous Learning",
-    "category": "Growth",
-    "description": "Knowledge evolves through observation, experimentation, documentation, and reflection rather than memorization.",
-    "keywords": [
-      "Learning",
-      "Documentation",
-      "Reflection",
-      "Research"
-    ]
+    "id": 2,
+    "name": "Living Archive",
+    "summary": "Knowledge is preserved together with its evolution, revisions and relationships instead of being stored as isolated documents.",
+    "group": "Knowledge"
   },
   {
-    "id": "relationships",
-    "title": "Relationship Building",
-    "category": "Leadership",
-    "description": "Professional relationships are ecosystems built through trust, clarity, technical credibility, and long-term collaboration.",
-    "keywords": [
-      "Communication",
-      "Trust",
-      "Networking",
-      "Leadership"
-    ]
+    "id": 3,
+    "name": "Capability Before Position",
+    "summary": "Professional titles are viewed as expressions of deeper capabilities rather than the primary identity.",
+    "group": "Career"
   },
   {
-    "id": "responsibility",
-    "title": "Responsibility",
-    "category": "Values",
-    "description": "Leadership appears whenever responsibility is accepted before authority is granted.",
-    "keywords": [
-      "Ownership",
-      "Leadership",
-      "Execution"
-    ]
+    "id": 4,
+    "name": "Knowledge Transfer",
+    "summary": "Learning occurs by simplifying complex ideas while preserving their essential meaning.",
+    "group": "Education"
   },
   {
-    "id": "documentation",
-    "title": "Knowledge Documentation",
-    "category": "Knowledge",
-    "description": "Ideas become reusable assets only after being documented, indexed, connected, and continuously refined.",
-    "keywords": [
-      "Archive",
-      "Knowledge",
-      "Systems",
-      "Documentation"
-    ]
+    "id": 5,
+    "name": "Strategic Observation",
+    "summary": "Small deviations are often early indicators of larger structural transformations.",
+    "group": "Analysis"
   },
   {
-    "id": "adaptation",
-    "title": "Adaptive Thinking",
-    "category": "Thinking",
-    "description": "Every environment requires different strategies while preserving the same principles.",
-    "keywords": [
-      "Adaptation",
-      "Strategy",
-      "Decision Making"
+    "id": 6,
+    "name": "Adaptive Leadership",
+    "summary": "Leadership emerges naturally from responsibility, understanding and service rather than authority.",
+    "group": "Leadership"
+  },
+  {
+    "id": 7,
+    "name": "Thinking Aloud",
+    "summary": "Recording thoughts makes it possible to observe the formation of ideas before they become polished conclusions.",
+    "group": "Reflection"
+  },
+  {
+    "id": 8,
+    "name": "Cognitive Museum",
+    "summary": "A digital space where visitors explore how ideas develop instead of seeing only finished outcomes.",
+    "group": "Project"
+  },
+  {
+    "id": 9,
+    "name": "Walkable Mind",
+    "summary": "Knowledge is organized as an explorable environment where concepts, projects and experiences are interconnected.",
+    "group": "Architecture"
+  },
+  {
+    "id": 10,
+    "name": "Operational Knowledge",
+    "summary": "Methods, principles and decisions are documented as reusable operational knowledge rather than temporary notes.",
+    "group": "Methodology"
+  },
+  {
+    "id": 11,
+    "name": "Transformation Tracking",
+    "summary": "The evolution of ideas is often more valuable than the final version itself.",
+    "group": "Research"
+  },
+  {
+    "id": 12,
+    "name": "Shared Purpose",
+    "summary": "Collaboration is strengthened by directing effort toward a common objective instead of individual competition.",
+    "group": "Collaboration"
+  }
 ]
