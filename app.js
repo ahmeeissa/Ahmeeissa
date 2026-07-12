@@ -1,127 +1,471 @@
-fetch("./data/capabilities.json")
+/* ==========================================================
+   Ahmeeissa v1
+   Interactive Capability Map
+   ========================================================== */
 
-.then(r=>r.json())
+"use strict";
 
-.then(data=>{
+/* ----------------------------------------------------------
+   Language
+---------------------------------------------------------- */
 
-const cy = cytoscape({
+const state = {
+    language: "en",
+    capabilities: [],
+    concepts: [],
+    timeline: [],
+    relations: []
+};
 
-container:document.getElementById("cy"),
+const dictionary = {
 
-elements:[
+    en: {
 
-...data.nodes,
+        explore: "Explore",
 
-...data.links
+        about:
+            "Engineering is presented here as a way of thinking rather than a profession.",
 
-],
+        loading:
+            "Loading..."
+    },
 
-style:[
+    ar: {
 
-{
+        explore: "استكشف",
 
-selector:"node",
+        about:
+            "الهندسة هنا ليست وظيفة، بل طريقة في التفكير وبناء الأنظمة.",
 
-style:{
+        loading:
+            "جارٍ التحميل..."
+    }
 
-label:"data(label)",
+};
 
-width:80,
 
-height:80,
+/* ----------------------------------------------------------
+   DOM
+---------------------------------------------------------- */
 
-"text-valign":"center",
+const languageButton =
+    document.querySelector(".lang-btn");
 
-"text-halign":"center",
+const network =
+    document.getElementById("network");
 
-"font-size":"12px",
+const canvas =
+    network.getContext("2d");
 
-color:"#fff",
 
-"background-color":"#238636",
+let nodes = [];
+let edges = [];
 
-"text-wrap":"wrap",
+let mouse = {
+    x:0,
+    y:0
+};
 
-"text-max-width":"100px"
 
-}
+/* ----------------------------------------------------------
+   Helpers
+---------------------------------------------------------- */
 
-},
+async function loadJSON(file){
 
-{
+    const response =
+        await fetch(file);
 
-selector:'node[type="core"]',
-
-style:{
-
-width:120,
-
-height:120,
-
-"background-color":"#58a6ff",
-
-"font-size":"16px"
-
-}
-
-},
-
-{
-
-selector:"edge",
-
-style:{
-
-width:2,
-
-"line-color":"#444",
-
-opacity:.5
-
-}
-
-},
-
-{
-
-selector:".fade",
-
-style:{
-
-opacity:.08
+    return response.json();
 
 }
 
-}
+function random(min,max){
 
-],
-
-layout:{
-
-name:"cose",
-
-animate:true,
-
-padding:100
+    return Math.random()*(max-min)+min;
 
 }
 
-});
 
-cy.on("tap","node",evt=>{
+/* ----------------------------------------------------------
+   Load Data
+---------------------------------------------------------- */
 
-const node=evt.target;
+async function initialize(){
 
-const connected=node.closedNeighborhood();
+    const [
 
-cy.elements().addClass("fade");
+        capabilities,
+        concepts,
+        timeline,
+        relations
 
-connected.removeClass("fade");
+    ] = await Promise.all([
 
-document.getElementById("title").innerText=node.data("label");
+        loadJSON("data/capabilities.json"),
 
-document.getElementById("description").innerText=node.data("description");
+        loadJSON("data/concepts.json"),
 
-});
+        loadJSON("data/timeline.json"),
+
+        loadJSON("data/relations.json")
+
+    ]);
+
+    state.capabilities = capabilities;
+
+    state.concepts = concepts;
+
+    state.timeline = timeline;
+
+    state.relations = relations;
+
+    buildGraph();
+
+    renderTimeline();
+
+    animate();
+
+}
+
+initialize();
+
+
+/* ----------------------------------------------------------
+   Build Network
+---------------------------------------------------------- */
+
+function buildGraph(){
+
+    nodes = [];
+
+    edges = [];
+
+    state.capabilities.forEach(cap=>{
+
+        nodes.push({
+
+            id:cap.id,
+
+            title:cap.title,
+
+            group:"capability",
+
+            radius:18,
+
+            x:random(120,network.width-120),
+
+            y:random(120,network.height-120),
+
+            vx:0,
+
+            vy:0
+
+        });
+
+    });
+
+    state.concepts.forEach(con=>{
+
+        nodes.push({
+
+            id:con.id,
+
+            title:con.title,
+
+            group:"concept",
+
+            radius:13,
+
+            x:random(120,network.width-120),
+
+            y:random(120,network.height-120),
+
+            vx:0,
+
+            vy:0
+
+        });
+
+    });
+
+    state.relations.forEach(r=>{
+
+        edges.push(r);
+
+    });
+
+}
+
+
+/* ----------------------------------------------------------
+   Physics
+---------------------------------------------------------- */
+
+function simulate(){
+
+    for(let i=0;i<nodes.length;i++){
+
+        for(let j=i+1;j<nodes.length;j++){
+
+            let a=nodes[i];
+
+            let b=nodes[j];
+
+            let dx=b.x-a.x;
+
+            let dy=b.y-a.y;
+
+            let d=Math.sqrt(dx*dx+dy*dy);
+
+            if(d<1)d=1;
+
+            let force=2500/(d*d);
+
+            let fx=force*dx/d;
+
+            let fy=force*dy/d;
+
+            a.vx-=fx;
+
+            a.vy-=fy;
+
+            b.vx+=fx;
+
+            b.vy+=fy;
+
+        }
+
+    }
+
+    edges.forEach(edge=>{
+
+        let a=nodes.find(n=>n.id===edge.from);
+
+        let b=nodes.find(n=>n.id===edge.to);
+
+        if(!a||!b)return;
+
+        let dx=b.x-a.x;
+
+        let dy=b.y-a.y;
+
+        let d=Math.sqrt(dx*dx+dy*dy);
+
+        let desired=170;
+
+        let diff=d-desired;
+
+        let k=0.003;
+
+        let fx=k*diff*dx;
+
+        let fy=k*diff*dy;
+
+        a.vx+=fx;
+
+        a.vy+=fy;
+
+        b.vx-=fx;
+
+        b.vy-=fy;
+
+    });
+
+    nodes.forEach(node=>{
+
+        node.vx*=0.90;
+
+        node.vy*=0.90;
+
+        node.x+=node.vx;
+
+        node.y+=node.vy;
+
+        node.x=Math.max(40,Math.min(network.width-40,node.x));
+
+        node.y=Math.max(40,Math.min(network.height-40,node.y));
+
+    });
+
+}
+
+
+/* ----------------------------------------------------------
+   Draw
+---------------------------------------------------------- */
+
+function draw(){
+
+    canvas.clearRect(
+
+        0,
+        0,
+        network.width,
+        network.height
+
+    );
+
+    canvas.lineWidth=1.2;
+
+    canvas.strokeStyle="rgba(120,170,255,.18)";
+
+    edges.forEach(edge=>{
+
+        let a=nodes.find(n=>n.id===edge.from);
+
+        let b=nodes.find(n=>n.id===edge.to);
+
+        if(!a||!b)return;
+
+        canvas.beginPath();
+
+        canvas.moveTo(a.x,a.y);
+
+        canvas.lineTo(b.x,b.y);
+
+        canvas.stroke();
+
+    });
+
+    nodes.forEach(node=>{
+
+        canvas.beginPath();
+
+        canvas.fillStyle=
+
+            node.group==="capability"
+
+            ?"#63b3ff"
+
+            :"#3ee0b3";
+
+        canvas.arc(
+
+            node.x,
+
+            node.y,
+
+            node.radius,
+
+            0,
+
+            Math.PI*2
+
+        );
+
+        canvas.fill();
+
+        canvas.fillStyle="#ffffff";
+
+        canvas.font="13px Inter";
+
+        canvas.textAlign="center";
+
+        canvas.fillText(
+
+            node.title,
+
+            node.x,
+
+            node.y+34
+
+        );
+
+    });
+
+}
+
+
+/* ----------------------------------------------------------
+   Animation
+---------------------------------------------------------- */
+
+function animate(){
+
+    simulate();
+
+    draw();
+
+    requestAnimationFrame(animate);
+
+}
+
+
+/* ----------------------------------------------------------
+   Timeline
+---------------------------------------------------------- */
+
+function renderTimeline(){
+
+    const container=document.querySelector(".timeline");
+
+    if(!container)return;
+
+    container.innerHTML="";
+
+    state.timeline.forEach(item=>{
+
+        const div=document.createElement("div");
+
+        div.className="timeline-item";
+
+        div.innerHTML=`
+
+            <span>${item.year}</span>
+
+            <h4>${item.title}</h4>
+
+            <p>${item.description}</p>
+
+        `;
+
+        container.appendChild(div);
+
+    });
+
+}
+
+
+/* ----------------------------------------------------------
+   Resize
+---------------------------------------------------------- */
+
+function resize(){
+
+    network.width=
+        network.clientWidth;
+
+    network.height=
+        network.clientHeight;
+
+}
+
+window.addEventListener("resize",resize);
+
+resize();
+
+
+/* ----------------------------------------------------------
+   Language Switch
+---------------------------------------------------------- */
+
+languageButton?.addEventListener("click",()=>{
+
+    state.language=
+
+        state.language==="en"
+
+        ?"ar"
+
+        :"en";
+
+    document.body.classList.toggle(
+
+        "ar",
+
+        state.language==="ar"
+
+    );
 
 });
