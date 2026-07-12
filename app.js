@@ -3,469 +3,344 @@
    Interactive Capability Map
    ========================================================== */
 
-"use strict";
-
-/* ----------------------------------------------------------
-   Language
----------------------------------------------------------- */
-
 const state = {
-    language: "en",
+    lang: "en",
     capabilities: [],
     concepts: [],
-    timeline: [],
+    projects: [],
+    archive: [],
     relations: []
 };
 
-const dictionary = {
+const $ = (selector) => document.querySelector(selector);
 
-    en: {
+async function loadJSON(path) {
+    const response = await fetch(path);
 
-        explore: "Explore",
-
-        about:
-            "Engineering is presented here as a way of thinking rather than a profession.",
-
-        loading:
-            "Loading..."
-    },
-
-    ar: {
-
-        explore: "استكشف",
-
-        about:
-            "الهندسة هنا ليست وظيفة، بل طريقة في التفكير وبناء الأنظمة.",
-
-        loading:
-            "جارٍ التحميل..."
+    if (!response.ok) {
+        throw new Error(`Cannot load ${path}`);
     }
 
-};
-
-
-/* ----------------------------------------------------------
-   DOM
----------------------------------------------------------- */
-
-const languageButton =
-    document.querySelector(".lang-btn");
-
-const network =
-    document.getElementById("network");
-
-const canvas =
-    network.getContext("2d");
-
-
-let nodes = [];
-let edges = [];
-
-let mouse = {
-    x:0,
-    y:0
-};
-
-
-/* ----------------------------------------------------------
-   Helpers
----------------------------------------------------------- */
-
-async function loadJSON(file){
-
-    const response =
-        await fetch(file);
-
-    return response.json();
-
+    return await response.json();
 }
 
-function random(min,max){
-
-    return Math.random()*(max-min)+min;
-
-}
-
-
-/* ----------------------------------------------------------
-   Load Data
----------------------------------------------------------- */
-
-async function initialize(){
+async function loadData() {
 
     const [
-
         capabilities,
         concepts,
-        timeline,
+        projects,
+        archive,
         relations
-
     ] = await Promise.all([
-
         loadJSON("data/capabilities.json"),
-
         loadJSON("data/concepts.json"),
-
-        loadJSON("data/timeline.json"),
-
+        loadJSON("data/projects.json"),
+        loadJSON("data/archive.json"),
         loadJSON("data/relations.json")
-
     ]);
 
     state.capabilities = capabilities;
-
     state.concepts = concepts;
-
-    state.timeline = timeline;
-
+    state.projects = projects;
+    state.archive = archive;
     state.relations = relations;
 
-    buildGraph();
+    renderCapabilities();
+    renderConcepts();
+    renderProjects();
+    renderArchive();
 
-    renderTimeline();
-
-    animate();
-
-}
-
-initialize();
-
-
-/* ----------------------------------------------------------
-   Build Network
----------------------------------------------------------- */
-
-function buildGraph(){
-
-    nodes = [];
-
-    edges = [];
-
-    state.capabilities.forEach(cap=>{
-
-        nodes.push({
-
-            id:cap.id,
-
-            title:cap.title,
-
-            group:"capability",
-
-            radius:18,
-
-            x:random(120,network.width-120),
-
-            y:random(120,network.height-120),
-
-            vx:0,
-
-            vy:0
-
-        });
-
-    });
-
-    state.concepts.forEach(con=>{
-
-        nodes.push({
-
-            id:con.id,
-
-            title:con.title,
-
-            group:"concept",
-
-            radius:13,
-
-            x:random(120,network.width-120),
-
-            y:random(120,network.height-120),
-
-            vx:0,
-
-            vy:0
-
-        });
-
-    });
-
-    state.relations.forEach(r=>{
-
-        edges.push(r);
-
-    });
+    initializeNetwork();
 
 }
 
+function card(title, text, tag = "") {
 
-/* ----------------------------------------------------------
-   Physics
----------------------------------------------------------- */
+    return `
+        <article class="card">
 
-function simulate(){
+            ${
+                tag
+                    ? `<span class="tag">${tag}</span>`
+                    : ""
+            }
 
-    for(let i=0;i<nodes.length;i++){
+            <h3>${title}</h3>
 
-        for(let j=i+1;j<nodes.length;j++){
+            <p>${text}</p>
 
-            let a=nodes[i];
+        </article>
+    `;
 
-            let b=nodes[j];
+}
 
-            let dx=b.x-a.x;
+function renderCapabilities() {
 
-            let dy=b.y-a.y;
+    const container = $("#capabilities");
 
-            let d=Math.sqrt(dx*dx+dy*dy);
+    if (!container) return;
 
-            if(d<1)d=1;
+    container.innerHTML =
+        state.capabilities
+            .map(item =>
+                card(
+                    item.title,
+                    item.description,
+                    item.category
+                )
+            )
+            .join("");
 
-            let force=2500/(d*d);
+}
 
-            let fx=force*dx/d;
+function renderConcepts() {
 
-            let fy=force*dy/d;
+    const container = $("#concepts");
 
-            a.vx-=fx;
+    if (!container) return;
 
-            a.vy-=fy;
+    container.innerHTML =
+        state.concepts
+            .map(item =>
+                card(
+                    item.name,
+                    item.summary,
+                    "Concept"
+                )
+            )
+            .join("");
 
-            b.vx+=fx;
+}
 
-            b.vy+=fy;
+function renderProjects() {
 
-        }
+    const container = $("#projects");
+
+    if (!container) return;
+
+    container.innerHTML =
+        state.projects
+            .map(project =>
+                card(
+                    project.name,
+                    project.description,
+                    project.status
+                )
+            )
+            .join("");
+
+}
+
+function renderArchive() {
+
+    const container = $("#archive");
+
+    if (!container) return;
+
+    container.innerHTML =
+        state.archive
+            .map(entry => `
+                <article class="timeline-item">
+
+                    <span>${entry.date}</span>
+
+                    <h4>${entry.title}</h4>
+
+                    <p>${entry.description}</p>
+
+                </article>
+            `)
+            .join("");
+
+}
+
+function initializeNetwork() {
+
+    if (typeof vis === "undefined") {
+
+        console.warn("vis-network not loaded");
+
+        return;
 
     }
 
-    edges.forEach(edge=>{
+    const container = document.getElementById("network");
 
-        let a=nodes.find(n=>n.id===edge.from);
+    if (!container) return;
 
-        let b=nodes.find(n=>n.id===edge.to);
+    const nodes = [];
+    const edges = [];
 
-        if(!a||!b)return;
+    state.capabilities.forEach(cap => {
 
-        let dx=b.x-a.x;
+        nodes.push({
 
-        let dy=b.y-a.y;
+            id: cap.id,
 
-        let d=Math.sqrt(dx*dx+dy*dy);
+            label: cap.title,
 
-        let desired=170;
+            shape: "dot",
 
-        let diff=d-desired;
+            size: 18
 
-        let k=0.003;
-
-        let fx=k*diff*dx;
-
-        let fy=k*diff*dy;
-
-        a.vx+=fx;
-
-        a.vy+=fy;
-
-        b.vx-=fx;
-
-        b.vy-=fy;
+        });
 
     });
 
-    nodes.forEach(node=>{
+    state.relations.forEach(rel => {
 
-        node.vx*=0.90;
+        edges.push({
 
-        node.vy*=0.90;
+            from: rel.from,
 
-        node.x+=node.vx;
+            to: rel.to
 
-        node.y+=node.vy;
-
-        node.x=Math.max(40,Math.min(network.width-40,node.x));
-
-        node.y=Math.max(40,Math.min(network.height-40,node.y));
+        });
 
     });
 
-}
+    const network = new vis.Network(
 
+        container,
 
-/* ----------------------------------------------------------
-   Draw
----------------------------------------------------------- */
+        {
 
-function draw(){
+            nodes,
 
-    canvas.clearRect(
+            edges
 
-        0,
-        0,
-        network.width,
-        network.height
+        },
+
+        {
+
+            autoResize: true,
+
+            physics: {
+
+                stabilization: true,
+
+                barnesHut: {
+
+                    gravitationalConstant: -6000,
+
+                    springLength: 180,
+
+                    springConstant: 0.02
+
+                }
+
+            },
+
+            interaction: {
+
+                hover: true,
+
+                navigationButtons: true,
+
+                keyboard: true
+
+            },
+
+            nodes: {
+
+                color: {
+
+                    background: "#63b3ff",
+
+                    border: "#3ee0b3"
+
+                },
+
+                font: {
+
+                    color: "#ffffff"
+
+                }
+
+            },
+
+            edges: {
+
+                color: "#7f8fa4",
+
+                width: 2
+
+            }
+
+        }
 
     );
 
-    canvas.lineWidth=1.2;
+    network.on("click", params => {
 
-    canvas.strokeStyle="rgba(120,170,255,.18)";
+        if (!params.nodes.length) return;
 
-    edges.forEach(edge=>{
+        const nodeId = params.nodes[0];
 
-        let a=nodes.find(n=>n.id===edge.from);
+        const capability =
+            state.capabilities.find(c => c.id === nodeId);
 
-        let b=nodes.find(n=>n.id===edge.to);
+        if (!capability) return;
 
-        if(!a||!b)return;
+        alert(
+`${capability.title}
 
-        canvas.beginPath();
-
-        canvas.moveTo(a.x,a.y);
-
-        canvas.lineTo(b.x,b.y);
-
-        canvas.stroke();
-
-    });
-
-    nodes.forEach(node=>{
-
-        canvas.beginPath();
-
-        canvas.fillStyle=
-
-            node.group==="capability"
-
-            ?"#63b3ff"
-
-            :"#3ee0b3";
-
-        canvas.arc(
-
-            node.x,
-
-            node.y,
-
-            node.radius,
-
-            0,
-
-            Math.PI*2
-
-        );
-
-        canvas.fill();
-
-        canvas.fillStyle="#ffffff";
-
-        canvas.font="13px Inter";
-
-        canvas.textAlign="center";
-
-        canvas.fillText(
-
-            node.title,
-
-            node.x,
-
-            node.y+34
-
+${capability.description}`
         );
 
     });
 
 }
 
+function switchLanguage() {
 
-/* ----------------------------------------------------------
-   Animation
----------------------------------------------------------- */
-
-function animate(){
-
-    simulate();
-
-    draw();
-
-    requestAnimationFrame(animate);
-
-}
-
-
-/* ----------------------------------------------------------
-   Timeline
----------------------------------------------------------- */
-
-function renderTimeline(){
-
-    const container=document.querySelector(".timeline");
-
-    if(!container)return;
-
-    container.innerHTML="";
-
-    state.timeline.forEach(item=>{
-
-        const div=document.createElement("div");
-
-        div.className="timeline-item";
-
-        div.innerHTML=`
-
-            <span>${item.year}</span>
-
-            <h4>${item.title}</h4>
-
-            <p>${item.description}</p>
-
-        `;
-
-        container.appendChild(div);
-
-    });
-
-}
-
-
-/* ----------------------------------------------------------
-   Resize
----------------------------------------------------------- */
-
-function resize(){
-
-    network.width=
-        network.clientWidth;
-
-    network.height=
-        network.clientHeight;
-
-}
-
-window.addEventListener("resize",resize);
-
-resize();
-
-
-/* ----------------------------------------------------------
-   Language Switch
----------------------------------------------------------- */
-
-languageButton?.addEventListener("click",()=>{
-
-    state.language=
-
-        state.language==="en"
-
-        ?"ar"
-
-        :"en";
+    state.lang =
+        state.lang === "en"
+            ? "ar"
+            : "en";
 
     document.body.classList.toggle(
-
         "ar",
-
-        state.language==="ar"
-
+        state.lang === "ar"
     );
+
+    const btn = $("#langButton");
+
+    if (btn) {
+
+        btn.textContent =
+            state.lang === "ar"
+                ? "English"
+                : "العربية";
+
+    }
+
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+
+    try {
+
+        await loadData();
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+    }
+
+    const langButton = $("#langButton");
+
+    if(langButton){
+
+        langButton.addEventListener(
+            "click",
+            switchLanguage
+        );
+
+    }
 
 });
