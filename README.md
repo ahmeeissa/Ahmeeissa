@@ -1,21 +1,34 @@
 # Ahmeeissa
 
-An interactive capability map that represents professional identity through relationships instead of a traditional CV.
+An interactive capability map that presents knowledge, relationships, projects, and the evolution of ideas instead of a traditional portfolio or résumé.
 
 ---
 
-## Project Vision
+## Vision
 
-Rather than listing experiences chronologically, Ahmeeissa visualizes how knowledge, engineering, leadership, education, operations, and business development connect together.
+Ahmeeissa is designed around a simple principle:
 
-The project is designed as an evolving personal knowledge system.
+> People are better understood through recurring capabilities than through job titles.
+
+Rather than presenting experience as a chronological list, the platform visualizes how capabilities appear across different professional contexts and how ideas evolve over time.
+
+---
+
+## Core Components
+
+- Interactive Capability Map
+- Concepts Library
+- Project Explorer
+- Living Archive
+- Relationship Graph
+- Timeline of Transformations
 
 ---
 
 ## Project Structure
 
 ```
-/
+Ahmeeissa/
 │
 ├── index.html
 ├── style.css
@@ -24,64 +37,177 @@ The project is designed as an evolving personal knowledge system.
 ├── data/
 │   ├── capabilities.json
 │   ├── concepts.json
-│   ├── timeline.json
 │   ├── projects.json
-│   └── profile.json
+│   ├── archive.json
+│   └── relations.json
 │
 └── README.md
 ```
 
 ---
 
-## Features
+## Data Files
 
-- Interactive capability map
-- Timeline visualization
-- Professional projects
-- Concept library
-- Capability relationships
-- Responsive design
-- Pure HTML/CSS/JavaScript
-- JSON-driven architecture
+### capabilities.json
+
+Stores the major capabilities represented in the project.
+
+Example:
+
+```json
+{
+  "id": 1,
+  "title": "Systems Thinking",
+  "category": "Engineering"
+}
+```
 
 ---
 
-## Future Roadmap
+### concepts.json
 
-### Version 2
+Contains conceptual ideas and recurring principles.
 
-- Graph visualization
-- Search engine
-- Arabic / English toggle
-- Animated relationships
-- Knowledge explorer
+---
 
-### Version 3
+### projects.json
 
-- Dynamic CMS
-- AI-powered recommendations
-- Markdown knowledge base
-- Portfolio gallery
-- Interactive storytelling
+Stores projects, their descriptions and current status.
+
+---
+
+### archive.json
+
+Represents milestones and historical knowledge.
+
+---
+
+### relations.json
+
+Defines the graph connections used by the interactive visualization.
+
+Example:
+
+```json
+{
+  "from": 1,
+  "to": 2,
+  "type": "supports"
+}
+```
 
 ---
 
 ## Technologies
 
+Current version:
+
 - HTML5
 - CSS3
 - Vanilla JavaScript
 - JSON
+- Vis Network
+
+No backend is required.
+
+---
+
+## Features
+
+- Interactive capability graph
+- Responsive layout
+- Knowledge cards
+- Timeline visualization
+- Expandable architecture
+- Lightweight static deployment
+- GitHub Pages compatible
+
+---
+
+## Running Locally
+
+Simply open:
+
+```
+index.html
+```
+
+or use any local server.
+
+Example:
+
+```
+python -m http.server
+```
+
+or
+
+```
+npx serve
+```
+
+---
+
+## Deployment
+
+The project can be deployed directly to:
+
+- GitHub Pages
+- Cloudflare Pages
+- Netlify
+- Vercel
+
+No server-side configuration is required.
+
+---
+
+## Roadmap
+
+### Version 1
+
+- Interactive capability graph
+- Concepts
+- Projects
+- Archive
+- Relationships
+
+---
+
+### Version 2
+
+- Search engine
+- Filters
+- Dark/Light mode
+- Multi-language content
+- Rich project pages
+
+---
+
+### Version 3
+
+- Interactive knowledge graph
+- Semantic relationships
+- Timeline navigation
+- Dynamic data loading
+- Personal knowledge architecture
 
 ---
 
 ## Philosophy
 
-Engineering is more than a profession.
+This project treats engineering as a way of thinking rather than a profession.
 
-It is a way of understanding complexity, organizing knowledge, and designing meaningful systems.
+Capabilities are represented as interconnected systems.
 
-Ahmeeissa attempts to visualize that philosophy.
+Projects are expressions of capabilities.
+
+Knowledge is treated as a living structure that evolves over time.
+
+---
+
+## License
+
+MIT License
 
 ---
 
@@ -91,8 +217,10 @@ Ahmed Eissa
 
 Biomedical Engineer
 
+Systems Thinker
+
+Knowledge Architecture
+
 Business Development
 
-Systems Thinking
-
-2026
+Ahmeeissa Project
