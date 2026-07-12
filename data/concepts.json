@@ -1,16 +1,71 @@
 [
   {
-    "id": "awareness",
-    "label": "الوعي"
+    "id": "engineering",
+    "title": "Engineering as a Mindset",
+    "category": "Thinking",
+    "description": "Engineering is not limited to technical work. It is a way of observing systems, identifying constraints, optimizing relationships, and designing sustainable solutions.",
+    "keywords": [
+      "Systems",
+      "Optimization",
+      "Structure",
+      "Problem Solving",
+      "Analysis"
+    ]
   },
-
   {
-    "id": "meaning",
-    "label": "المعنى"
+    "id": "learning",
+    "title": "Continuous Learning",
+    "category": "Growth",
+    "description": "Knowledge evolves through observation, experimentation, documentation, and reflection rather than memorization.",
+    "keywords": [
+      "Learning",
+      "Documentation",
+      "Reflection",
+      "Research"
+    ]
   },
-
   {
-    "id": "systems-thinking",
-    "label": "التفكير المنظومي"
-  }
+    "id": "relationships",
+    "title": "Relationship Building",
+    "category": "Leadership",
+    "description": "Professional relationships are ecosystems built through trust, clarity, technical credibility, and long-term collaboration.",
+    "keywords": [
+      "Communication",
+      "Trust",
+      "Networking",
+      "Leadership"
+    ]
+  },
+  {
+    "id": "responsibility",
+    "title": "Responsibility",
+    "category": "Values",
+    "description": "Leadership appears whenever responsibility is accepted before authority is granted.",
+    "keywords": [
+      "Ownership",
+      "Leadership",
+      "Execution"
+    ]
+  },
+  {
+    "id": "documentation",
+    "title": "Knowledge Documentation",
+    "category": "Knowledge",
+    "description": "Ideas become reusable assets only after being documented, indexed, connected, and continuously refined.",
+    "keywords": [
+      "Archive",
+      "Knowledge",
+      "Systems",
+      "Documentation"
+    ]
+  },
+  {
+    "id": "adaptation",
+    "title": "Adaptive Thinking",
+    "category": "Thinking",
+    "description": "Every environment requires different strategies while preserving the same principles.",
+    "keywords": [
+      "Adaptation",
+      "Strategy",
+      "Decision Making"
 ]
