@@ -1,219 +1,167 @@
 {
-  "nodes": [
-
+  "capabilities": [
     {
-      "data": {
-        "id": "ahmeeissa",
-        "label": "Ahmeeissa",
-        "description": "بيئة التكوّن الكلية"
-      },
-      "classes": "core"
+      "id": "engineering",
+      "title": "Engineering as a Mindset",
+      "category": "Core",
+      "color": "#4f46e5",
+      "description": "Engineering is not presented as a profession alone, but as a structured way of observing, modelling, simplifying complexity and building reliable systems.",
+      "keywords": [
+        "Systems Thinking",
+        "Analysis",
+        "Optimization",
+        "Architecture",
+        "Problem Solving"
+      ],
+      "connections": [
+        "business",
+        "operations",
+        "training",
+        "knowledge",
+        "design"
+      ]
     },
-
     {
-      "data": {
-        "id": "engineering",
-        "label": "الهندسة",
-        "description": "الهندسة كنمط تفكير.",
-        "type": "capability"
-      }
+      "id": "business",
+      "title": "Business Development",
+      "category": "Professional",
+      "color": "#2563eb",
+      "description": "Connecting technical understanding with commercial value, identifying opportunities and building sustainable relationships.",
+      "keywords": [
+        "Sales",
+        "Negotiation",
+        "Strategy",
+        "Value Creation",
+        "Partnership"
+      ],
+      "connections": [
+        "engineering",
+        "operations",
+        "communication"
+      ]
     },
-
     {
-      "data": {
-        "id": "systems",
-        "label": "بناء الأنظمة",
-        "description": "تحويل الأفكار إلى بنى قابلة للنمو.",
-        "type": "capability"
-      }
+      "id": "operations",
+      "title": "Operations Management",
+      "category": "Professional",
+      "color": "#059669",
+      "description": "Managing execution, coordinating resources and transforming plans into repeatable operational systems.",
+      "keywords": [
+        "Execution",
+        "Coordination",
+        "Planning",
+        "Quality",
+        "Process"
+      ],
+      "connections": [
+        "engineering",
+        "business",
+        "events"
+      ]
     },
-
     {
-      "data": {
-        "id": "operations",
-        "label": "إدارة العمليات",
-        "description": "تنظيم التدفقات والأنظمة الحية.",
-        "type": "capability"
-      }
+      "id": "training",
+      "title": "Training & Knowledge Transfer",
+      "category": "Human",
+      "color": "#d97706",
+      "description": "Transforming complex knowledge into understandable learning experiences and practical skills.",
+      "keywords": [
+        "Education",
+        "Mentoring",
+        "Learning",
+        "Communication"
+      ],
+      "connections": [
+        "knowledge",
+        "communication",
+        "engineering"
+      ]
     },
-
     {
-      "data": {
-        "id": "business",
-        "label": "تطوير الأعمال",
-        "description": "ربط القيمة بالفرص.",
-        "type": "capability"
-      }
+      "id": "events",
+      "title": "Event & Crowd Management",
+      "category": "Professional",
+      "color": "#dc2626",
+      "description": "Coordinating people, logistics and decisions under dynamic conditions while maintaining stability.",
+      "keywords": [
+        "Crowds",
+        "Leadership",
+        "Coordination",
+        "Risk"
+      ],
+      "connections": [
+        "operations",
+        "leadership"
+      ]
     },
-
     {
-      "data": {
-        "id": "training",
-        "label": "نقل المعرفة",
-        "description": "تحويل الخبرة إلى معرفة قابلة للمشاركة.",
-        "type": "capability"
-      }
+      "id": "leadership",
+      "title": "Adaptive Leadership",
+      "category": "Human",
+      "color": "#7c3aed",
+      "description": "Taking responsibility under uncertainty and adapting behaviour according to context.",
+      "keywords": [
+        "Responsibility",
+        "Adaptation",
+        "Decision Making"
+      ],
+      "connections": [
+        "events",
+        "communication",
+        "operations"
+      ]
     },
-
     {
-      "data": {
-        "id": "leadership",
-        "label": "القيادة",
-        "description": "اتخاذ القرار تحت الضغط.",
-        "type": "capability"
-      }
+      "id": "knowledge",
+      "title": "Knowledge Architecture",
+      "category": "Research",
+      "color": "#0891b2",
+      "description": "Designing structures that connect concepts, experiences, observations and evolving ideas.",
+      "keywords": [
+        "Archive",
+        "Ontology",
+        "Knowledge Graph",
+        "Research"
+      ],
+      "connections": [
+        "engineering",
+        "training",
+        "design"
+      ]
     },
-
     {
-      "data": {
-        "id": "crowds",
-        "label": "إدارة الحشود",
-        "description": "تنسيق الأنظمة البشرية.",
-        "type": "capability"
-      }
+      "id": "communication",
+      "title": "Communication",
+      "category": "Human",
+      "color": "#ea580c",
+      "description": "Building shared understanding between technical and non-technical audiences.",
+      "keywords": [
+        "Presentation",
+        "Dialogue",
+        "Explanation"
+      ],
+      "connections": [
+        "training",
+        "business",
+        "leadership"
+      ]
     },
-
     {
-      "data": {
-        "id": "awareness",
-        "label": "الوعي",
-        "description": "مفهوم مركزي.",
-        "type": "concept"
-      }
-    },
-
-    {
-      "data": {
-        "id": "meaning",
-        "label": "المعنى",
-        "description": "محور إدراكي.",
-        "type": "concept"
-      }
-    },
-
-    {
-      "data": {
-        "id": "reflection",
-        "label": "تفكير صباحي متأمل",
-        "description": "أرشيف نصي حي.",
-        "type": "archive"
-      }
-    },
-
-    {
-      "data": {
-        "id": "heritage",
-        "label": "الموروث والقيمة",
-        "description": "تسجيل صوتي ومفهوم متولد.",
-        "type": "archive"
-      }
-    },
-
-    {
-      "data": {
-        "id": "ahmeeissa-project",
-        "label": "مشروع Ahmeeissa",
-        "description": "بناء بيئة التكوّن الكلية.",
-        "type": "project"
-      }
-    },
-
-    {
-      "data": {
-        "id": "knowledge-space",
-        "label": "مساحة التكوّن",
-        "description": "نظام معرفي حي.",
-        "type": "project"
-      }
+      "id": "design",
+      "title": "Experience Design",
+      "category": "Creative",
+      "color": "#db2777",
+      "description": "Creating meaningful experiences by combining systems thinking with visual and conceptual design.",
+      "keywords": [
+        "UX",
+        "Storytelling",
+        "Visualization",
+        "Interaction"
+      ],
+      "connections": [
+        "knowledge",
+        "engineering"
+      ]
     }
-
-  ],
-
-  "links": [
-
-    {
-      "data": {
-        "source": "ahmeeissa",
-        "target": "engineering"
-      }
-    },
-
-    {
-      "data": {
-        "source": "engineering",
-        "target": "systems"
-      }
-    },
-
-    {
-      "data": {
-        "source": "systems",
-        "target": "operations"
-      }
-    },
-
-    {
-      "data": {
-        "source": "operations",
-        "target": "business"
-      }
-    },
-
-    {
-      "data": {
-        "source": "training",
-        "target": "awareness"
-      }
-    },
-
-    {
-      "data": {
-        "source": "reflection",
-        "target": "meaning"
-      }
-    },
-
-    {
-      "data": {
-        "source": "heritage",
-        "target": "awareness"
-      }
-    },
-
-    {
-      "data": {
-        "source": "leadership",
-        "target": "crowds"
-      }
-    },
-
-    {
-      "data": {
-        "source": "leadership",
-        "target": "operations"
-      }
-    },
-
-    {
-      "data": {
-        "source": "awareness",
-        "target": "engineering"
-      }
-    },
-
-    {
-      "data": {
-        "source": "ahmeeissa",
-        "target": "ahmeeissa-project"
-      }
-    },
-
-    {
-      "data": {
-        "source": "ahmeeissa-project",
-        "target": "knowledge-space"
-      }
-    }
-
   ]
 }
