@@ -224,3 +224,64 @@ Knowledge Architecture
 Business Development
 
 Ahmeeissa Project
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/README.md b/README.md
+index bf881c39695a59a25af705d60bd917c0606075e0..0118e2e51a4326a2156a80bb24dd6390f137b8dd 100644
+--- a/README.md
++++ b/README.md
+@@ -110,51 +110,51 @@ Current version:
+ 
+ No backend is required.
+ 
+ ---
+ 
+ ## Features
+ 
+ - Interactive capability graph
+ - Responsive layout
+ - Knowledge cards
+ - Timeline visualization
+ - Expandable architecture
+ - Lightweight static deployment
+ - GitHub Pages compatible
+ 
+ ---
+ 
+ ## Running Locally
+ 
+ Simply open:
+ 
+ ```
+ index.html
+ ```
+ 
+-or use any local server.
++The app also includes `data/inline-data.js`, so the graph can load when the HTML file is opened directly from disk. You may still use any local server.
+ 
+ Example:
+ 
+ ```
+ python -m http.server
+ ```
+ 
+ or
+ 
+ ```
+ npx serve
+ ```
+ 
+ ---
+ 
+ ## Deployment
+ 
+ The project can be deployed directly to:
+ 
+ - GitHub Pages
+ - Cloudflare Pages
+ - Netlify
+ - Vercel
+ 
+ No server-side configuration is required.
+ 
+EOF
+)
